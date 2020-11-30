@@ -330,3 +330,4 @@ The [Metal Shading Language specification][ShadingLanguageSpec] defines other at
 [MTKView]: https://developer.apple.com/documentation/metalkit/mtkview
 [ShadingLanguageSpec]: https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf
 [MTLFunction]: https://developer.apple.com/documentation/metal/mtlfunction
+# UsingARenderPipelineToRenderPrimitives

@@ -27,10 +27,13 @@
 		63E77A181ED2059A00E1E542 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3532871E99974500C194AD /* AAPLShaders.metal */; };
 		63E77A191ED2059E00E1E542 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3532871E99974500C194AD /* AAPLShaders.metal */; };
 		63E77A1A1ED205A200E1E542 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3532871E99974500C194AD /* AAPLShaders.metal */; };
+		7BA058E5257502D5002967E7 /* MetalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA058E4257502D5002967E7 /* MetalUtils.swift */; };
+		7BA058E6257502D5002967E7 /* MetalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA058E4257502D5002967E7 /* MetalUtils.swift */; };
+		7BA058E7257502D5002967E7 /* MetalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA058E4257502D5002967E7 /* MetalUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		328A8E964EC41C65EC8AF01A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		328A8E964EC41C65EC8AF01A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		3A05CBDE1F731AB800CA21B1 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = ../../../../iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		3A1F1B411F0338CF001622B3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = ../../../../AppleTVOS.platform/Developer/SDKs/AppleTVOS11.0.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		3A3532841E99974500C194AD /* AAPLRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLRenderer.h; sourceTree = "<group>"; };
@@ -53,7 +56,11 @@
 		3ACD21331EAE60D2000D1DED /* AAPLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLAppDelegate.h; sourceTree = "<group>"; };
 		3ACD21341EAE60D2000D1DED /* AAPLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLAppDelegate.m; sourceTree = "<group>"; };
 		3ED283CC1EC2C6D200A23F58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		907FE32A28789CDAFD777257 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		7BA058E1257502D5002967E7 /* HelloTriangle-macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloTriangle-macOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BA058E2257502D5002967E7 /* HelloTriangle-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloTriangle-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BA058E3257502D5002967E7 /* HelloTriangle-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloTriangle-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BA058E4257502D5002967E7 /* MetalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUtils.swift; sourceTree = "<group>"; };
+		907FE32A28789CDAFD777257 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,10 @@
 				3A3532851E99974500C194AD /* AAPLRenderer.m */,
 				3A3532861E99974500C194AD /* AAPLShaderTypes.h */,
 				3A3532871E99974500C194AD /* AAPLShaders.metal */,
+				7BA058E4257502D5002967E7 /* MetalUtils.swift */,
+				7BA058E1257502D5002967E7 /* HelloTriangle-macOS-Bridging-Header.h */,
+				7BA058E2257502D5002967E7 /* HelloTriangle-iOS-Bridging-Header.h */,
+				7BA058E3257502D5002967E7 /* HelloTriangle-tvOS-Bridging-Header.h */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -174,7 +185,6 @@
 			children = (
 				328A8E964EC41C65EC8AF01A /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -251,15 +261,19 @@
 				TargetAttributes = {
 					3A35328E1E99974500C194AD = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = L6N2D7D375;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
 					3A3532A81E99974500C194AD = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
 					3A3532BE1E99974500C194AD = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = A93A5CM278;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -322,6 +336,7 @@
 				3A3532941E99974500C194AD /* main.m in Sources */,
 				3A3532CE1E99974500C194AD /* AAPLRenderer.m in Sources */,
 				3ACD21351EAE60D2000D1DED /* AAPLAppDelegate.m in Sources */,
+				7BA058E6257502D5002967E7 /* MetalUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +349,7 @@
 				3A1F1B391F033765001622B3 /* AAPLViewController.m in Sources */,
 				3A1F1B3F1F033846001622B3 /* main.m in Sources */,
 				3A1F1B441F033EF3001622B3 /* AAPLAppDelegate.m in Sources */,
+				7BA058E7257502D5002967E7 /* MetalUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +361,7 @@
 				63E77A1A1ED205A200E1E542 /* AAPLShaders.metal in Sources */,
 				3A1F1B3E1F033846001622B3 /* main.m in Sources */,
 				3A3532D01E99974500C194AD /* AAPLRenderer.m in Sources */,
+				7BA058E5257502D5002967E7 /* MetalUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,8 +514,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L6N2D7D375;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/System/Library/Frameworks",
@@ -516,6 +534,9 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -524,8 +545,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L6N2D7D375;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/System/Library/Frameworks",
@@ -539,6 +561,8 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -548,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -566,6 +591,9 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-tvOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
@@ -575,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -589,6 +618,8 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-tvOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
@@ -599,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -615,6 +647,9 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-macOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -622,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 907FE32A28789CDAFD777257 /* SampleCode.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -634,6 +670,8 @@
 				PRODUCT_NAME = HelloTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Renderer/HelloTriangle-macOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

@@ -7,8 +7,12 @@ Implementation of a platform independent renderer class, which performs Metal se
 
 @import simd;
 @import MetalKit;
+@import Metal;
+@import CoreMedia;
+@import CoreGraphics;
 
 #import "AAPLRenderer.h"
+#import "HelloTriangle-Swift.h"
 
 // Header shared between C code here, which executes Metal API commands, and .metal files, which
 // uses these types as inputs to the shaders.
@@ -37,6 +41,7 @@ Implementation of a platform independent renderer class, which performs Metal se
         NSError *error;
 
         _device = mtkView.device;
+        mtkView.framebufferOnly = NO;
 
         // Load all the shader files with a .metal file extension in the project.
         id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
@@ -120,6 +125,10 @@ Implementation of a platform independent renderer class, which performs Metal se
                           vertexCount:3];
 
         [renderEncoder endEncoding];
+
+        [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> _Nonnull cb) {
+            [[[MetalUtils alloc] init] mtlTextureToPixelBuffer:view.currentDrawable.texture];
+        }];
 
         // Schedule a present once the framebuffer is complete using the current drawable.
         [commandBuffer presentDrawable:view.currentDrawable];
